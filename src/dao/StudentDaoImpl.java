@@ -20,7 +20,7 @@ public class StudentDaoImpl implements StudentDao {
         try {
             Connection connection = connectionManager.getConnection();
             try(PreparedStatement statement = connection.prepareStatement(
-                    "SELECT * FROM students WHERE students.id = ?"
+                    "SELECT * FROM students WHERE id = ?"
             )){
                 statement.setInt(1, id);
                 return getStudent(statement.executeQuery());
